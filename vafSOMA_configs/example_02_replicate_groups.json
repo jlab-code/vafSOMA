@@ -1,0 +1,27 @@
+{
+  "_about": "Same data as example_01, with the three leaves of each tip declared as replicates of one branch meristem (replicate_groups): one latent state per variant and group. Settings reduced for a quick run (8 EM starts); use the defaults for real data.",
+  "experiment": "example_02_replicate_groups",
+  "outdir": "vafSOMA_output",
+  "input": {
+    "variants": "vafSOMA_inputs/examples/example_tree/vaf_tables.zip",
+    "effective_genome_size": "vafSOMA_inputs/examples/example_tree/effective_genome_size.tsv",
+    "root2tip": "vafSOMA_inputs/examples/example_tree/root2tip.tsv",
+    "tree": "example",
+    "replicate_groups": "vafSOMA_inputs/examples/example_tree/replicate_groups.tsv"
+  },
+  "model": {
+    "layer_specific_seq": false,
+    "vaf_phasing": "unphased",
+    "layer_proportions": {
+      "L1": 0.13,
+      "L2": 0.84,
+      "L3": 0.03
+    }
+  },
+  "em": {
+    "n_starts": 8
+  },
+  "compute": {
+    "n_jobs": 2
+  }
+}

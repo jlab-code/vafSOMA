@@ -1,0 +1,95 @@
+{
+  "_about": "vafSOMA run configuration. Relative paths are relative to this file. Keys starting with '_' are comments. Results go to <outdir>/<experiment>/. See vafSOMA_docs/configuration.md.",
+  "experiment": "my_analysis",
+  "outdir": "vafSOMA_output",
+  "input": {
+    "_about": "variants: one VAF table per minimum-depth cutoff (directory, .zip or single table with a depth_filter column); effective_genome_size: table with tree, depth_filter, effective_genome_size; root2tip: table with sample, root2tip_length (length or age of each organ, measured from its divergence from the matched normal; used to choose the depth window and passed to the outputs). tree: label used when the tables carry no tree column. replicate_groups: table (tree, sample, group) or {tree: {sample: group}}. control_organs: {tree: organ or [organs]} used as matched normal upstream (flagged in the outputs; not used to choose the depth window).",
+    "variants": "vaf_tables.zip",
+    "effective_genome_size": "effective_genome_size.tsv",
+    "root2tip": "root2tip.tsv",
+    "tree": null,
+    "replicate_groups": null,
+    "control_organs": {}
+  },
+  "model": {
+    "_about": "layer_specific_seq false: bulk organs with layer_proportions; true: layer-enriched sample with active_layer (and its purity active_layer_proportion). vaf_phasing 'unphased' (collapsed diploid; mu = c/2) or 'phased' (mu = c). Template layer proportions: mean of published leaf compositions (as in the simSOMA layers template).",
+    "layer_specific_seq": false,
+    "vaf_phasing": "unphased",
+    "layer_proportions": {
+      "L1": 0.13,
+      "L2": 0.84,
+      "L3": 0.03
+    },
+    "active_layer": null,
+    "active_layer_proportion": null,
+    "mu": {
+      "source": "derived",
+      "mode": "fixed",
+      "manual": {
+        "L1": 0.1,
+        "L2": 0.36,
+        "L3": 0.04
+      },
+      "grid": {
+        "L1": null,
+        "L2": null,
+        "L3": null
+      },
+      "near_one_trigger": 0.999,
+      "near_one_offsets": null
+    },
+    "layer_dispersion": {
+      "mode": "fixed",
+      "rho": 0.0,
+      "rho_grid": null
+    }
+  },
+  "depth_window": {
+    "_about": "selected: fixed window 'start:end' (e.g. '28:36'); null selects a stable window automatically.",
+    "selected": null,
+    "selection": "auto",
+    "min_start": 12,
+    "min_cutoffs": 4,
+    "max_cv": 0.15,
+    "max_adjacent_change": 0.25
+  },
+  "background": {
+    "q_max": 0.5,
+    "n_quad": 96,
+    "lambda_grid": null,
+    "lambda_grid_min": 1.0,
+    "lambda_grid_max": 500.0,
+    "lambda_grid_n": 15,
+    "lambda_refine": true
+  },
+  "em": {
+    "n_starts": 16,
+    "random_seed": 1,
+    "max_iter": 1000,
+    "tol": 1e-08
+  },
+  "calls": {
+    "stable_call_fraction": 1.0
+  },
+  "diagnostics": {
+    "enabled": true,
+    "resolvability_min_recall": 0.5,
+    "fit_check_max_abs_residual": 4.0
+  },
+  "sensitivity": {
+    "layer_proportions": false,
+    "steps": null,
+    "layers": null
+  },
+  "recurrence_test": {
+    "enabled": false,
+    "null_sites": 20000,
+    "presence_threshold": 0.5,
+    "alpha": 0.05,
+    "seed": 0
+  },
+  "compute": {
+    "n_jobs": 1,
+    "plots": true
+  }
+}

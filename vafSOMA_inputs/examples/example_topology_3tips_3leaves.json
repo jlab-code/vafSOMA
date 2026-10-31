@@ -1,0 +1,197 @@
+{
+  "unit": "years",
+  "tree_age": 10.0,
+  "description": "Synthetic example tree for vafSOMA: trunk (3 y), three sampled branch tips (10 y). Three leaves per tip, formed about one week apart (replicates from one branch meristem).",
+  "branches": [
+    {
+      "id": "T",
+      "parent": null,
+      "length": 3.0,
+      "start_age": 0.0,
+      "end_age": 3.0,
+      "branch_order": 0
+    },
+    {
+      "id": "B1",
+      "parent": "T",
+      "length": 7.0,
+      "start_age": 3.0,
+      "end_age": 10.0,
+      "branch_order": 1
+    },
+    {
+      "id": "B2",
+      "parent": "T",
+      "length": 3.0,
+      "start_age": 3.0,
+      "end_age": 6.0,
+      "branch_order": 1
+    },
+    {
+      "id": "B3",
+      "parent": "B2",
+      "length": 4.0,
+      "start_age": 6.0,
+      "end_age": 10.0,
+      "branch_order": 2
+    },
+    {
+      "id": "B4",
+      "parent": "B2",
+      "length": 4.0,
+      "start_age": 6.0,
+      "end_age": 10.0,
+      "branch_order": 2
+    }
+  ],
+  "events": [
+    {
+      "branch": "T",
+      "pos": 1.0,
+      "type": "branch",
+      "target": "B1",
+      "parent": "T",
+      "age": 3.0,
+      "child": "B1",
+      "branch_order": 1
+    },
+    {
+      "branch": "T",
+      "pos": 1.0,
+      "type": "branch",
+      "target": "B2",
+      "parent": "T",
+      "age": 3.0,
+      "child": "B2",
+      "branch_order": 1
+    },
+    {
+      "branch": "B2",
+      "pos": 1.0,
+      "type": "branch",
+      "target": "B3",
+      "parent": "B2",
+      "age": 6.0,
+      "child": "B3",
+      "branch_order": 2
+    },
+    {
+      "branch": "B2",
+      "pos": 1.0,
+      "type": "branch",
+      "target": "B4",
+      "parent": "B2",
+      "age": 6.0,
+      "child": "B4",
+      "branch_order": 2
+    },
+    {
+      "branch": "B1",
+      "pos": 0.994286,
+      "type": "organ",
+      "target": "B1_leaf1",
+      "parent": "B1",
+      "age": 9.96,
+      "organ": "B1_leaf1",
+      "branch_order": 1,
+      "attach_age": 9.96,
+      "terminal_tip": false
+    },
+    {
+      "branch": "B1",
+      "pos": 0.997143,
+      "type": "organ",
+      "target": "B1_leaf2",
+      "parent": "B1",
+      "age": 9.98,
+      "organ": "B1_leaf2",
+      "branch_order": 1,
+      "attach_age": 9.98,
+      "terminal_tip": false
+    },
+    {
+      "branch": "B1",
+      "pos": 1.0,
+      "type": "organ",
+      "target": "B1_leaf3",
+      "parent": "B1",
+      "age": 10.0,
+      "organ": "B1_leaf3",
+      "branch_order": 1,
+      "attach_age": 10.0,
+      "terminal_tip": true
+    },
+    {
+      "branch": "B3",
+      "pos": 0.99,
+      "type": "organ",
+      "target": "B3_leaf1",
+      "parent": "B3",
+      "age": 9.96,
+      "organ": "B3_leaf1",
+      "branch_order": 2,
+      "attach_age": 9.96,
+      "terminal_tip": false
+    },
+    {
+      "branch": "B3",
+      "pos": 0.995,
+      "type": "organ",
+      "target": "B3_leaf2",
+      "parent": "B3",
+      "age": 9.98,
+      "organ": "B3_leaf2",
+      "branch_order": 2,
+      "attach_age": 9.98,
+      "terminal_tip": false
+    },
+    {
+      "branch": "B3",
+      "pos": 1.0,
+      "type": "organ",
+      "target": "B3_leaf3",
+      "parent": "B3",
+      "age": 10.0,
+      "organ": "B3_leaf3",
+      "branch_order": 2,
+      "attach_age": 10.0,
+      "terminal_tip": true
+    },
+    {
+      "branch": "B4",
+      "pos": 0.99,
+      "type": "organ",
+      "target": "B4_leaf1",
+      "parent": "B4",
+      "age": 9.96,
+      "organ": "B4_leaf1",
+      "branch_order": 2,
+      "attach_age": 9.96,
+      "terminal_tip": false
+    },
+    {
+      "branch": "B4",
+      "pos": 0.995,
+      "type": "organ",
+      "target": "B4_leaf2",
+      "parent": "B4",
+      "age": 9.98,
+      "organ": "B4_leaf2",
+      "branch_order": 2,
+      "attach_age": 9.98,
+      "terminal_tip": false
+    },
+    {
+      "branch": "B4",
+      "pos": 1.0,
+      "type": "organ",
+      "target": "B4_leaf3",
+      "parent": "B4",
+      "age": 10.0,
+      "organ": "B4_leaf3",
+      "branch_order": 2,
+      "attach_age": 10.0,
+      "terminal_tip": true
+    }
+  ]
+}

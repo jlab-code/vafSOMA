@@ -1,0 +1,71 @@
+{
+  "_about": "simSOMA `simsoma layers` configuration used by vafSOMA_scripts/make_example_data.py: the simSOMA layered template with per-layer rates raised five-fold (small example tree). Topology path relative to this file.",
+  "topology": {
+    "topology_json": "example_topology_3tips_3leaves.json",
+    "mapping_unit": "years",
+    "mapping_rate": 5.0,
+    "phyllotaxy": {
+      "mode": "off"
+    }
+  },
+  "simulation": {
+    "seed": 7,
+    "n_replicates": 1,
+    "parameters": {
+      "m": 3,
+      "rho": 0.0,
+      "sam_boundary_cells": 40,
+      "branch_precursor_number": 3,
+      "organ_precursor_number": 10,
+      "organ_total_cells": 1000,
+      "sequenced_cells": 1000,
+      "organ_mu_multiplier": 1.0
+    },
+    "layers": {
+      "L1": {
+        "mu_unit": 4.75
+      },
+      "L2": {
+        "mu_unit": 2.75
+      },
+      "L3": {
+        "mu_unit": 2.75
+      }
+    }
+  },
+  "observation": {
+    "phase": "unphased",
+    "layer_contributions": {
+      "L1": 0.13,
+      "L2": 0.84,
+      "L3": 0.03
+    },
+    "model": {
+      "depth": {
+        "mode": "lognormal_site_sample",
+        "mean": 60
+      },
+      "reads": {
+        "type": "binomial",
+        "sequencing_error": 0.0
+      },
+      "background": {
+        "n_sites": 2000,
+        "distribution": "gamma:2",
+        "mean": 0.023
+      },
+      "caller": {
+        "min_depth": 0,
+        "min_alt_reads": 2,
+        "retain_called_any": true
+      }
+    },
+    "vafsoma_tables": {
+      "first_cut_fraction": 0.5,
+      "n_tiers": 6
+    }
+  },
+  "output": {
+    "dir": "(set by make_example_data.py)"
+  }
+}
