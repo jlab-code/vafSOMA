@@ -9,7 +9,7 @@ description = "Cell-layer-fixed somatic mutations from VAF spectra of layered pl
 readme = "README.md"
 requires-python = ">=3.10"
 license = {text = "MIT"}
-authors = [{name = "Frank Johannes", email = "frank@johanneslab.org"}, {name = "Ming Zhou"}]
+authors = [{name = "Ming Zhou"}, {name = "Frank Johannes", email = "frank@johanneslab.org"}]
 dependencies = ["numpy>=1.24", "pandas>=2.0", "scipy>=1.10", "matplotlib>=3.7", "joblib>=1.2"]
 
 [project.optional-dependencies]

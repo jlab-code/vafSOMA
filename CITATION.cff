@@ -2,10 +2,10 @@ cff-version: 1.2.0
 message: "If you use vafSOMA, please cite the accompanying paper and this software repository."
 title: "vafSOMA: cell-layer-fixed somatic mutations from VAF spectra of layered plant tissue"
 authors:
-  - family-names: "Johannes"
-    given-names: "Frank"
   - family-names: "Zhou"
     given-names: "Ming"
+  - family-names: "Johannes"
+    given-names: "Frank"
 version: "0.4.3"
 date-released: 2026-10-31
 url: "https://github.com/jlab-code/vafSOMA"
