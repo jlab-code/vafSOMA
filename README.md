@@ -33,17 +33,33 @@ A step-by-step tutorial is in a separate repository: https://github.com/jlab-cod
 
 ## Install and command line
 
+Install the tagged release with the exact library versions vafSOMA was tested with (`requirements.lock.txt`), so that
+the same commands give the same results on every computer:
+
 ```bash
-pip install .            # from the repository root (Python >= 3.10; numpy, pandas, scipy, matplotlib, joblib)
-vafsoma version
+git clone --branch v0.4.3 https://github.com/jlab-code/vafSOMA.git
+cd vafSOMA
+conda create -y -n vafsoma043 python=3.13
+conda activate vafsoma043
+pip install -r requirements.lock.txt      # exact library versions vafSOMA was tested with
+pip install .
+vafsoma version                           # vafsoma 0.4.3; numpy 2.5.3, pandas 3.0.5, scipy 1.18.1
+```
+
+Without conda, a Python 3.13 virtual environment works the same way (`python3.13 -m venv .venv && source
+.venv/bin/activate`, then the two `pip install` lines). Report the output of `vafsoma version` with your results; each
+run also records the vafSOMA version in `00_config_resolved.json`. Activate the environment in every new terminal before
+using vafSOMA (`conda activate vafsoma043`); its name contains the version, so later versions can be installed next to
+it. To try vafSOMA in an existing environment, `pip install .` alone is enough (Python >= 3.10, recent numpy, pandas,
+scipy, matplotlib and joblib).
+
+```bash
+conda activate vafsoma043                                   # once per terminal
 vafsoma template run > my_analysis.json                     # complete configuration template
 vafsoma check my_analysis.json                              # validate configuration and inputs
 vafsoma run my_analysis.json                                # fit and call; results in <outdir>/<experiment>/
-vafsoma run vafSOMA_configs/example_01_per_leaf.json        # synthetic example tree
+vafsoma run vafSOMA_configs/example_01_per_leaf.json        # synthetic example tree (a few minutes)
 ```
-
-Alternatively, `bash vafSOMA_scripts/01_setup_env.sh` builds a project-local `.venv/` with the pinned versions from
-`requirements.lock.txt`, and `bash vafSOMA_scripts/run_config_local.sh CONFIG` runs a configuration with it.
 
 The flag-based interface of earlier versions (`vafsoma estimate --variants ... --outdir ...`) is still available.
 
